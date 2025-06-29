@@ -1,0 +1,21 @@
+{
+  "name": "hexagonal",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.2",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "@types/node": "^22.15.18",
+    "express": "^5.1.0",
+    "prisma": "^6.8.1",
+    "tsx": "^4.19.4"
+  }
+}
