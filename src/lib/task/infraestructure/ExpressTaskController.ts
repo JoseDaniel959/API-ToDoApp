@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { ServiceContainer } from "../Shared/ServiceContainer";
+import { ServiceContainer } from "../../Shared/ServiceContainer";
 
 export class ExpressTaskController {
 

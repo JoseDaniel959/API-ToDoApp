@@ -1,5 +1,5 @@
 import express from "express";
-import taskRouter from "./infraestructure/ExpressTareaRouter";
+import taskRouter from "./src/lib/task/infraestructure/ExpressTareaRouter";
 
 const app = express();
 

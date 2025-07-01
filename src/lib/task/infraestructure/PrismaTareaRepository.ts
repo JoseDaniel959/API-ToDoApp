@@ -1,5 +1,5 @@
 // import type { PrismaClient } from "@prisma/client";
-import { PrismaClient } from "../generated/prisma";
+import { PrismaClient } from "../../../../generated/prisma";
 import type { Tarea } from "../domain/Tarea";
 import type { TareaID } from "../domain/TareaID";
 import { type TareaRepository } from "../domain/TareaRepository";
