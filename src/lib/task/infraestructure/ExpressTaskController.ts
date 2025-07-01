@@ -17,5 +17,10 @@ export class ExpressTaskController {
         );
         return res.status(200).json(req.body)
     }
+    async getTareaByID(req: Request, res: Response){
+        console.log(req.params.id)
+        const tareaByID = await ServiceContainer.tarea.getOneByID.handler(req.params.id ? +req.params.id : 0)      
+        return res.status(202).json(tareaByID)
+    }
 
 }

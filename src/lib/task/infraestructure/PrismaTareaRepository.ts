@@ -10,7 +10,6 @@ const tareaTypeToPrismaType = (tarea: Tarea) =>{
         name: tarea.getName(),
         startDate: tarea.getStarDate().getValue(),
         finalDate: tarea.getFinalDate().getValue()
-
     }
 
 }
@@ -22,7 +21,6 @@ export class PrismaTareaRepository implements TareaRepository {
     constructor() {
         this.client = new PrismaClient();
     }
-
     async create(tarea: Tarea): Promise<void> {
         const newTarea = await this.client.tareas.create({ data : tareaTypeToPrismaType(tarea)})
     }
@@ -31,14 +29,14 @@ export class PrismaTareaRepository implements TareaRepository {
         return allTareas as unknown as Tarea[];
     }
     async getOneByID(tareaID: TareaID): Promise<Tarea | null> {
-        throw new Error("Method not implemented.");
-
+        const tareaByID = await this.client.tareas.findUnique({where:{id: tareaID.getValue()}})
+        return tareaByID as unknown as Tarea;
     }
-    edit(tarea: Tarea): Promise<void> {
+    async edit(tarea: Tarea): Promise<void> {
         throw new Error("Method not implemented.");
     }
-    delete(tareaID: TareaID): Promise<void> {
-        throw new Error("Method not implemented.");
+    async delete(tareaID: TareaID): Promise<void> {
+        await this.client.tareas.delete({where:{id: tareaID.getValue()}})
     }
 
 
